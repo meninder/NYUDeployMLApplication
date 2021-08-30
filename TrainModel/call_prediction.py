@@ -1,8 +1,10 @@
 from google.api_core.client_options import ClientOptions
 from google.oauth2.service_account import Credentials
 from googleapiclient import discovery
+from dotenv import load_dotenv
+load_dotenv(dotenv_path='.env', verbose=True)
 
-credentials = Credentials.from_service_account_file(r"/Users/meninder/Downloads/firstapp-323113-2c79eeb380ab.json")
+credentials = Credentials.from_service_account_file('GCP_CREDENTIALS_FILE')
 api_endpoint = 'https://us-east1-ml.googleapis.com'
 
 client_options = ClientOptions(api_endpoint=api_endpoint)
